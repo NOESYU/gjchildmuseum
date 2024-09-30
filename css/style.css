@@ -1,0 +1,134 @@
+/* 눈누 */
+@font-face {
+  font-family: 'CookieRun-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+
+html, body{
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  color: #333;
+  background-color: #E0F4FF;
+}
+
+.header{
+  max-width: 1240px;
+  width: 90%;
+  height: 120px;
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 5px 0px #ced4da;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  position: relative; /* submenu 기준점 */
+}
+.logo{
+  margin-left: 40px;
+}
+.menu{
+  display: flex;
+  align-self: flex-end;
+}
+.menu>li{ 
+  display: flex;
+  align-items: center;
+}
+.menu>li:nth-child(1)~li::before{
+  content: ":";
+  color: #ccc;
+}
+.menu>li>a{
+  font-family: 'CookieRun-Regular';
+  font-size: 17px;
+  display: block;
+  line-height: 70px;
+  padding: 0 50px;
+  border-bottom: 5px solid #fff; /* hover 되면 색변경 */
+}
+.submenu{
+  max-width: 1240px;
+  width: 100%; /* absolute 했으니 width 값 필수 */
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 120px;
+  z-index: 10;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 5px 0px #ced4da;
+  padding: 20px 100px 100px 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.submenu>li{
+  width: 24%;
+  text-align: center;
+  line-height: 45px;
+  margin: 3px;
+  border: 1px solid #1ECAD3;
+}
+.submenu>li>a{
+  display: block;
+}
+.menu>li:hover>a{
+  border-bottom-color: #1ECAD3;
+}
+.submenu>li>a:hover{
+  background-color: #1ECAD3;
+  font-weight: 800;
+}
+/* hover 클래스를 만들어서 script로 */
+.hover{
+  border-radius: 0px;
+  box-shadow: none;
+}
+.h_icons{
+  margin-right: 40px;
+}
+.h_icons>li>a{
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* 헤더 미디어 쿼리 */
+@media all and (max-width: 1360px){
+  .menu>li>a{
+    padding: 0 30px;
+  }
+}
+@media all and (max-width: 1024px){
+  .header{
+    width: 100%;
+    height: 60px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .logo{
+    margin-left: 20px;
+  }
+  .logo img{
+    width: 80%;
+  }
+  .menu, .h_icons{
+    display: none;
+  }
+  .mobile{
+    display: block;
+    margin-right: 30px;
+    cursor: pointer;
+  }
+}
+@media all and (min-width: 1025px){
+  .mobile{
+    display: none;
+  }
+}

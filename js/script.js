@@ -1,0 +1,9 @@
+$(".submenu").hide();
+$(".menu>li").mouseover(function(){
+  $(this).children(".submenu").stop().show();
+  $(".header").addClass("hover");
+})
+$(".menu>li").mouseout(function(){
+  $(this).children(".submenu").stop().hide();
+  $(".header").removeClass("hover");
+})
