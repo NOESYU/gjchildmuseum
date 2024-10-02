@@ -121,14 +121,173 @@ html, body{
   .menu, .h_icons{
     display: none;
   }
-  .mobile{
+  .m_btn{
     display: block;
     margin-right: 30px;
     cursor: pointer;
+  }
+
+  .m_nav{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  .m_nav_bg{
+    width: 100%;
+    height: 100%;
+    background-color: #8888;
+  }
+  .m_nav_wrap{
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+  }
+  .m_menu_top{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 14px;
+    background-color: #fdcc34;
+  }
+  .m_menu_top>a{
+    margin-right: 10px;
+  }
+  .m_close{
+    position: absolute;
+    right: 25px;
+    background: none;
+  }
+  .m_menu{
+    width: 100px;
+    height: 100%;
+    background-color: #767676;
+    color: #fff;
+  }
+  .m_menu>li{
+    text-align: center;
+    line-height: 60px;
+  }
+  .m_menu>li>a{
+    display: block;
+    font-family: 'CookieRun-Regular';
+    font-size: 15px;
+    border-bottom: 1px solid #aaa;
+  }
+  .m_menu>li:nth-last-child(1)>a{
+    border: none;
+    /* 줄바꿈돼서 간격조절 */
+    line-height: 20px;
+    padding: 15px 0;
+  }
+  .m_active{
+    background-color: #fff;
+    color: #6e4b00;
+  }
+  .m_submenu{
+    width: 100%;
+    position: absolute;
+    left: 100px;
+    top: 60px;
+    color: #333;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .m_submenu>li{
+    line-height: 55px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+  }
+  .m_submenu>li>a{
+    display: block;
+    padding-left: 15px;
+  }
+  .m_submenu>li:nth-last-child(1){
+    border-bottom: none;
+  }
+  /* m_nav 오->왼 이동 효과, 스크립트로 */
+  .m_nav_wrap{
+    margin-right: -300px;
+    transition: all 0.5s;
+  }
+  .m_nav_active{
+    margin-right: 0;
+    transition: all 0.5s;
   }
 }
 @media all and (min-width: 1025px){
   .mobile{
     display: none;
   }
+}
+
+
+.main{
+  height: 1249px;
+  background: url(../imgs/b-img01.jpg) no-repeat;
+  background-size: cover;
+}
+.main_title{
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative; /* 메인 해, 새 배치용 */
+}
+.main_title>img{
+  margin-top: 150px;
+  margin-bottom: 30px;
+}
+.main_title>p{
+  font-weight: 500;
+}
+.main_sun{
+  position: absolute;
+  right: calc(50% - 270px);
+  top: -70px;
+  animation: rotate 10s infinite;
+}
+.main_bird{
+  position: absolute;
+  left: calc(50% - 280px);
+  top: -50px;
+  animation: linear1 10s infinite linear;
+}
+.bird1{
+  position: absolute;
+  bottom: -20px;
+  right: 25%;
+  animation: linear2 8s infinite linear;
+}
+.bird2{
+  position: absolute;
+  bottom: -50px;
+  right: 15%;
+  animation: linear2 9s infinite linear;
+}
+
+
+@keyframes rotate{
+  100%{transform: rotate(360deg);}
+}
+@keyframes linear1{
+  0%{transform: translate(0, 0) rotateY(180deg);}
+  48%{transform: translate(-90px, 0) rotateY(180deg);}
+  50%{transform: translate(-100px, 0);}
+  100%{transform: translate(0, 0);}
+}
+@keyframes linear2{
+  0%{transform: translate(0, 0) rotateY(180deg);}
+  48%{transform: translate(-40px, 0) rotateY(180deg);}
+  50%{transform: translate(-50px, 0);}
+  100%{transform: translate(0, 0)}
 }
