@@ -29,6 +29,7 @@ html, body{
   align-items: center;
   margin: 0 auto;
   position: relative; /* submenu 기준점 */
+  z-index: 10;
 }
 .logo{
   margin-left: 40px;
@@ -229,9 +230,11 @@ html, body{
 
 
 .main{
-  height: 1249px;
-  background: url(../imgs/b-img01.jpg) no-repeat;
+  height: 1129px;
+  background: url(../imgs/b-img01.jpg) no-repeat center center;
   background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
 .main_title{
   width: 90%;
@@ -242,6 +245,7 @@ html, body{
   flex-direction: column;
   text-align: center;
   position: relative; /* 메인 해, 새 배치용 */
+  z-index: 1; /* 구름보다 위로 올라오게 */
 }
 .main_title>img{
   margin-top: 150px;
@@ -274,6 +278,86 @@ html, body{
   right: 15%;
   animation: linear2 9s infinite linear;
 }
+.ship{
+  position: absolute;
+  right: 20%;
+  top: 37%;
+  animation: linear3 8s infinite;
+}
+.bg_plant{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.grass{
+  display: block;
+  margin-left: -150px;
+}
+.flower1{
+  position: absolute;
+  top: -50px;
+  left: 65px;
+  animation: flower 6s infinite;
+}
+.flower2{
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  animation: flower 7s infinite;
+}
+.flower3{
+  position: absolute;
+  top: 90px;
+  left: 170px;
+  animation: flower 4s infinite;
+}
+.flower4{
+  position: absolute;
+  top: 180px;
+  left: 250px;
+  animation: flower 5s infinite;
+}
+.bg_sky{
+  position: absolute;
+  width: 100%;
+  height: 330px;
+}
+.cloud1{
+  position: absolute;
+  top: 40%;
+  left: -5%;
+  animation: cloud 12s infinite;
+}
+.cloud2{
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  animation: cloud 14s infinite;
+}
+.cloud3{
+  position: absolute;
+  bottom: 0%;
+  left: 35%;
+  animation: cloud 15s infinite;
+}
+.cloud4{
+  position: absolute;
+  top: 45%;
+  left: 65%;
+  animation: cloud 12s infinite;
+}
+.cloud5{
+  position: absolute;
+  top: 45%;
+  right: -15%;
+  animation: cloud 13s infinite;
+}
+.bird3{
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+  display: block;
+}
 
 
 @keyframes rotate{
@@ -290,4 +374,118 @@ html, body{
   48%{transform: translate(-40px, 0) rotateY(180deg);}
   50%{transform: translate(-50px, 0);}
   100%{transform: translate(0, 0)}
+}
+@keyframes linear3{
+  /* 왔다갔다만 하니까 50% 만 작성해도 됨 */
+  50%{transform: translate(-100px, 0);}
+}
+@keyframes flower{
+  0%{transform: scale(1) rotate(0deg);}
+  10%{transform: scale(0.9) rotate(0deg);}
+  50%{transform: scale(1.1) rotate(0deg);}
+  55%{transform: scale(1.1) rotate(10deg);}
+  60%{transform: scale(1.1) rotate(-10deg);}
+  65%{transform: scale(1.1) rotate(10deg);}
+  70%{transform: scale(1.1) rotate(-10deg);}
+  100%{transform: scale(1) rotate(0deg);}
+}
+@keyframes cloud{
+  50%{transform: translate(-50px, 20px)}
+}
+
+
+.main_contents{
+  max-width: 1240px;
+  width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 40px;
+}
+.main_con1{
+  display: flex;
+  justify-content: space-between;
+}
+.box{
+  width: 32%;
+  height: 370px;
+  border-radius: 16px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.con1box1{
+  background-color: #e5367b;
+  box-shadow: 0 5px 0px #a32658;
+  color: #fff;
+  position: relative;
+}
+.con1box1>p{
+  font-family: 'CookieRun-Regular';
+  font-size: 22px;
+}
+.con1box1 .more{
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.notice{
+  margin: 20px 0;
+  font-weight: 600;
+}
+.notice>li{
+  display: flex;
+  justify-content: space-between;
+  line-height: 55px;
+}
+.notice>li::before{
+  content: "·";
+  font-size: 30px;
+}
+.notice>li>a{
+  width: 75%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.con1box2>p{
+  font-family: 'CookieRun-Regular';
+  font-size: 22px;
+}
+.con1box2{
+  background-color: #0042A4;
+  box-shadow: 0 5px 0px #002a68;
+  color: #fff;
+  position: relative;
+}
+.con1box2 .more{
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.con1box3>p{
+  font-family: 'CookieRun-Regular';
+  font-size: 22px;
+}
+.con1box3{
+  background-color: #ffd600;
+  box-shadow: 0 5px 0px #b99e14;
+}
+.main_con2{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.box2{
+  width: 32%;
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 5px 0px #ccc;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-sizing: border-box;
 }
