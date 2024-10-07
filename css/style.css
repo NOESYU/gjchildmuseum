@@ -465,21 +465,101 @@ html, body{
   right: 30px;
   top: 30px;
 }
-
-.con1box3>p{
-  font-family: 'CookieRun-Regular';
-  font-size: 22px;
+.con1box2>.swiper{
+  width: 100%;
+  margin-top: 30px;
 }
+.swiper-slide{
+  position: relative; /* swiper-slide>p absolute용 */
+}
+.swiper-slide>img{
+  width: 100%;
+  height: 200px;
+  display: block; /* p태그 뜨는부분 없앰 */
+}
+.swiper-slide>p{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  background-color: #333b;
+  font-size: 13px;
+}
+.btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.btns>.swiper-pagination{
+  /* 원래 absolute 상태니까 수정 */
+  position: static;
+}
+.btns>li:nth-child(1){
+  padding: 5px;
+}
+.prev_btn, .next_btn{
+  cursor: pointer;
+}
+.btns .swiper-pagination-current{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #f7941e;
+  display: inline-block; /* block 요소이면서 사이즈 가지고있을수있게 */
+}
+
+
 .con1box3{
   background-color: #ffd600;
   box-shadow: 0 5px 0px #b99e14;
 }
+.con1box3>p{
+  font-family: 'CookieRun-Regular';
+  font-size: 22px;
+}
+.con1box3>img{
+  display: block;
+  margin: 20px auto 0; /* 상 좌우 하 */
+}
+.box3_list{
+  background-color: #fff8;
+  border-top: 3px solid #121212;
+  padding: 15px 10px;
+}
+.box3_list>li{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+} 
+.box3_list>li:nth-child(3){
+  margin-bottom: 0;
+}
+.box3_list>li>span{
+  color: #fff;
+  background-color: #f16e44;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 17px;
+  width: 80px;
+  line-height: 30px;
+  text-align: center;
+}
+.box3_list>li>p{
+  margin-left: 10px;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -1px;
+}
+
+
 .main_con2{
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
 }
-
 .box2{
   width: 32%;
   height: 100px;
@@ -488,4 +568,43 @@ html, body{
   border-radius: 12px;
   padding: 15px 20px;
   box-sizing: border-box;
+}
+.box2>a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box2>a>img:nth-of-type(1){
+  width: 15%;
+  height: 50px;
+}
+.box2>a>div{
+  margin-left: 20px;
+  width: 75%;
+}
+.box2>a>div>p:nth-child(1){
+  font-family: 'CookieRun-Regular';
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.box2>a>div>p:nth-child(2){
+  width: 70%;
+  font-weight: 300;
+  font-size: 14px;
+  color: #666;
+  line-height: 95%;
+}
+.box2>a>img:nth-of-type(2){
+  padding-left: 20px;
+  width: 10%;
+  border-left: 1px solid #ddd;
+}
+
+.character{
+  position: absolute;
+  left: 70px;
+  bottom: 100%;
+  margin-bottom: -1px;
 }

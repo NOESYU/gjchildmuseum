@@ -28,3 +28,16 @@ $(".m_close").click(function(){
   $(".m_nav_wrap").removeClass("m_nav_active");
 })
 
+
+// con1box2 슬라이드
+const slider1 = new Swiper(".con1box2 .swiper", {
+  loop: true,
+  pagination: {
+    el: ".con1box2 .swiper-pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".next_btn",
+    prevEl: ".prev_btn",
+  },
+})
