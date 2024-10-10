@@ -700,7 +700,7 @@ html, body{
     height: auto;
   }
   .main_title>img:nth-child(1){
-    width: 40%;
+    width: 240px;
   }
   .main_con1{
     flex-wrap: wrap;
@@ -750,7 +750,10 @@ html, body{
   }
 }
 @media all and (max-width: 767px){
-
+  .main{
+    background: url(../imgs/b-img01-mobile.png) center top no-repeat;
+    background-size: 100%;
+  }
   .main_contents{
     width: 85%;
   }
@@ -761,7 +764,7 @@ html, body{
     height: 100px;
     left: 0;
   }
-  .chara1, .chara2, .chara3{
+  .cloud2, .cloud4, .chara1, .chara2, .chara3{
     display: none;
   }
   .main_bird{
@@ -781,9 +784,12 @@ html, body{
   .ship{
     display: block;
     width: 80px;
-    right: 9%;
-    top: 19%;
+    right: 40px;
+    top: 395px;
     animation: linear3 12s infinite;
+  }
+  .bg_plant, .bird3{
+    display: none;
   }
   .con1box3{
     margin-bottom: 0;
@@ -791,6 +797,7 @@ html, body{
   .main_con2{
     position: static;
     width: 100%;
+    margin-bottom: 30px;
   }
   .box2>a>img:nth-of-type(1){
     width: 10%;
@@ -800,10 +807,168 @@ html, body{
   }
 }
 
+
 .inner{
   width: 100%;
   height: 1125px;
-  background: url(../imgs/bg-img03_240108.png) center center no-repeat;
+  background: url(../imgs/b-img02.png) center center no-repeat; /* 질감배경 */
   background-color: #fffdd7;
   position: relative;
+}
+/* .bg_inner>img{
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+.bg_inner>img:nth-child(1){
+  left: 0;
+}
+.bg_inner>img:nth-child(2){
+  right: 0;
+} */
+.con_title{
+  text-align: center;
+  padding-top: 100px;
+}
+.con_title>p:nth-child(1){
+  font-family: 'CookieRun-Regular';
+  font-size: 38px;
+}
+.con_title>p:nth-child(2){
+  margin-top: 24px;
+  letter-spacing: -1px;
+}
+.conwrap{
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+.conwrap>img{
+  width: 100%;
+}
+.con_txt{
+  background-color: #fff;
+  width: 300px;
+  line-height: 50px;
+  border-radius: 24px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 130px;
+  top: 30px;
+}
+.con_txt>img{
+  background-color: #333;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.con_list>li>a{
+  display: block;
+  text-align: center;
+}
+.con_list>li>a>img{
+  background-color: #333;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+.con_list>li>a:hover>img{
+  background-color: #0091BF;
+  transform: rotate(90deg);
+}
+.con_list>li>a>p:nth-of-type(1){
+  font-family: 'CookieRun-Regular';
+  font-size: 20px;
+}
+.con_list>li>a>p:nth-of-type(2){
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+.con_list>li{
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #673A0A;
+}
+.con_list>li:nth-child(1){
+  left: 25%;
+  top: 9%;
+}
+.con_list>li:nth-child(2){
+  left: 15%;
+  top: 43%;
+}
+.con_list>li:nth-child(3){
+  left: 49%;
+  top: 30%;
+}
+.con_list>li:nth-child(4){
+  left: 21%;
+  top: 70%;
+}
+.con_list>li:nth-child(5){
+  left: 48%;
+  top: 58%;
+}
+.con_list>li:nth-child(6){
+  left: 74%;
+  top: 22%;
+}
+.conwrap>p{
+  position: absolute;
+  right: 1%;
+  bottom: 25%;
+  color: #673A0A;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.deco{
+  width: 100%;
+  height: 100%;
+}
+.d_chara{
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  animation: deco1 10s infinite; 
+}
+.d_chara2{
+  position: absolute;
+  left: 48%;
+  top: 12%;
+  animation: deco2 5s infinite;
+}
+.d_chara3{
+  position: absolute;
+  left: 62%;
+  top: 21%;
+  animation: flower 5s infinite; /* bg_plant 꽃과 같은 애니메이션 적용 */
+}
+
+
+@keyframes deco1{
+  0%{transform: translate(0, 0) rotateY(180deg);}
+  5%{transform: translate(0, 0) rotateY(180deg);}
+  10%{transform: translate(0, 0) rotateY(0);}
+  48%{transform: translate(50px, -150px) rotateY(0);}
+  52%{transform: translate(50px, -150px) rotateY(180deg);}
+  100%{transform: translate(0, 0) rotateY(180deg);}
+}
+@keyframes deco2{
+  40%{transform: translate(0, 0); opacity: 1;}
+  60%{transform: translate(180px, -120px); opacity: 1;}
+  100%{transform: translate(180px, -120px); opacity: 0;}
+}
+
+
+@media all and (max-width: 1280px){
+
 }
