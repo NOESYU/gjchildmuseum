@@ -814,18 +814,8 @@ html, body{
   background: url(../imgs/b-img02.png) center center no-repeat; /* 질감배경 */
   background-color: #fffdd7;
   position: relative;
+  overflow: hidden;
 }
-/* .bg_inner>img{
-  display: block;
-  position: absolute;
-  bottom: 0;
-}
-.bg_inner>img:nth-child(1){
-  left: 0;
-}
-.bg_inner>img:nth-child(2){
-  right: 0;
-} */
 .con_title{
   text-align: center;
   padding-top: 100px;
@@ -874,7 +864,6 @@ html, body{
   background-color: #333;
   padding: 10px;
   border-radius: 50%;
-  margin-right: 10px;
   transition: all 0.3s;
 }
 .con_list>li>a:hover>img{
@@ -952,6 +941,29 @@ html, body{
   top: 21%;
   animation: flower 5s infinite; /* bg_plant 꽃과 같은 애니메이션 적용 */
 }
+.inner::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 30px;
+  bottom: -50px;
+  width: 424px;
+  height: 206px;
+  background: url(../imgs/bg_inner.svg) center center no-repeat;
+  background-size: 100%;
+}
+.inner::after{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 30px;
+  bottom: -50px;
+  width: 387px;
+  height: 315px;
+  background: url(../imgs/bg_inner2.svg) center center no-repeat;
+  background-size: 100%;
+}
+
 
 
 @keyframes deco1{
@@ -969,6 +981,146 @@ html, body{
 }
 
 
+@media all and (max-width: 1559px){
+  .inner{
+    height: auto;
+    padding-bottom: 100px;
+  }
+  .inner::before{
+    width: 287px;
+    left: -50px;
+    bottom: -80px;
+  }
+  .inner::after{
+    width: 180px;
+    right: 0;
+    bottom: -100px;
+  }
+  .conwrap{
+    width: 90%;
+  }
+}
 @media all and (max-width: 1280px){
+  .conwrap>img, .deco{
+    display: none;
+  }
+  .con_txt, .con_list>li, .conwrap>p{
+    position: static;
+  }
+  .con_list>li>a>p:nth-of-type(2)>br, .conwrap>p>br{
+    /* br 태그도 none 으로 처리할 수 있음! */
+    display: none;
+  }
+  .con_list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .con_list>li{
+    width: 32%;
+    height: 185px;
+    background-color: #f6e599;
+    margin: 10px 0;
+    border-radius: 24px;
+  }
+  .con_list>li>a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* li 내부에 여백주기 위해서 */
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  .con_list>li>a>img{
+    margin-bottom: 7px;
+  }
+  .con_txt{
+    margin: 30px auto;
+  }
+  .conwrap>p{
+    width: 420px;
+    margin: 50px auto;
+    font-weight: 600;
+  }
 
+  @media all and (max-width: 767px){
+    .inner{
+      padding-bottom: 50px;
+    }
+    .inner::before{
+      width: clamp(100px, 35vw, 287px);
+    }
+    .inner::after{
+      width: clamp(100px, 25vw, 207px);
+      bottom: -110px;
+    }
+    .con_list>li{
+      width: 48%;
+   }
+  }
+}
+
+
+.site{
+  height: 60px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+.site_wrap{
+  width: 100%;
+  max-width: 1240px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.site_wrap>p{
+  width: 140px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.site_btns{
+  display: flex;
+  width: 150px;
+  justify-content: space-evenly;
+}
+.site_btns>li{
+  position: relative;
+  cursor: pointer;
+  width: 25px;
+}
+.site_btns>li>img{
+  padding: 5px; /* 눌리는 범위 늘리기 */
+}
+.site_pause, .site_play{
+  position: absolute;
+}
+/* Slides per view auto */
+.site>.swiper{
+  width: 100%;
+}
+.site .swiper-slide {
+  width: 190px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  border-right: 1px solid #ddd;
+}
+
+@media all and (max-width: 1329px){
+  .site_wrap{
+    max-width: 100%;;
+  }
+}
+@media all and (max-width: 767px){
+  .site{
+    height: 100px;
+  }
+  .site_wrap{
+    flex-wrap: wrap;
+  }
 }

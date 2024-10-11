@@ -41,3 +41,31 @@ const slider1 = new Swiper(".con1box2 .swiper", {
     prevEl: ".prev_btn",
   },
 })
+
+
+// site 슬라이드
+const slider2 = new Swiper(".site .swiper", {
+  loop: true,
+  slidesPerView: "auto",
+  navigation: {
+    nextEl: ".site_next",
+    prevEl: ".site_prev",
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+})
+
+$(".site_play").hide();
+$(".site_pause").click(function(){
+  $(this).hide();
+  $(this).siblings().show();
+  /* 위에서 선언한 slider2  사용 */
+  slider2.autoplay.stop();
+})
+$(".site_play").click(function(){
+  $(this).hide();
+  $(this).siblings().show();
+  slider2.autoplay.start();
+})
