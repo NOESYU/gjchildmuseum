@@ -1079,7 +1079,7 @@ html, body{
   align-items: center;
 }
 .site_wrap>p{
-  width: 140px;
+  width: 150px;
   font-size: 14px;
   font-weight: 700;
 }
@@ -1111,9 +1111,9 @@ html, body{
   border-right: 1px solid #ddd;
 }
 
-@media all and (max-width: 1329px){
+@media all and (max-width: 1359px){
   .site_wrap{
-    max-width: 100%;;
+    max-width: 100%;
   }
 }
 @media all and (max-width: 767px){
@@ -1122,5 +1122,158 @@ html, body{
   }
   .site_wrap{
     flex-wrap: wrap;
+  }
+}
+
+
+.footer{
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-size: 15px;
+  color: #f2f2f2;
+  background-color: #494949;
+  box-sizing: border-box;
+}
+.f_wrap{
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.f_menu{
+  display: flex; /* 메뉴가로정렬 */
+}
+.f_menu>li{
+  display: flex; /* before 요소 막대기용 */
+  align-items: center;
+}
+.f_menu>li:nth-child(1)~li::before{
+  content: "";
+  height: 15px;
+  border-left: 1px solid #ccc;
+}
+.f_menu>li>a{
+  font-weight: 300;
+  padding: 0 10px;
+  line-height: 30px;
+}
+.f_menu>li:nth-child(1)>a{
+  padding-left: 0;
+}
+.f_menu>li:nth-child(2)>a{
+  color: #fdcc34;
+  font-weight: 500;
+}
+.copyright{
+  margin-top: 20px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #888;
+}
+
+.family{
+  position: relative;
+}
+.fam_btn{
+  display: flex; /* after 요소 화살표 */
+  justify-content: space-between;
+  width: 180px;
+  line-height: 40px;
+  background: none;
+  color: #ddd;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 20px;
+}
+.fam_btn::after{
+  content: "▲";
+  font-size: 13px;
+  color: #888;
+}
+.fam_list{
+  position: absolute;
+  width: 100%;
+  bottom: 100%;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  font-size: 14px;
+  color: #333;
+  z-index: 1;
+  line-height: 40px;
+  box-sizing: border-box;
+  display: none;
+}
+.fam_list>li:nth-child(1)~li{
+  border-top: 1px solid #aaa;
+}
+.fam_list>li>a{
+  display: block;
+  padding-left: 20px;
+}
+.family:hover .fam_list{
+  display: block;
+}
+.fam_list>li:hover a{
+  font-weight: 700;
+}
+.sns{
+  width: 200px;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
+
+
+@media all and (max-width: 1359px){
+  .footer{
+    padding: 15px 20px;
+  }
+}
+@media all and (max-width: 1023px){
+  .f_wrap{
+    flex-direction: column;
+    align-items: center;
+  }
+  .f_right{
+    order: 1;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .family{
+    order: 2;
+  }
+  .sns{
+    order: 1;
+    margin-top: 0;
+  }
+  .f_left{
+    order: 2;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .copyright{
+    margin-top: 5px;
+    text-align: center;
+  }
+}
+@media all and (max-width: 767px){
+  .f_menu{
+    flex-wrap: wrap;
+  }
+  .f_right{
+    flex-direction: column;
+  }
+  .family{
+    margin-top: 10px;
   }
 }
